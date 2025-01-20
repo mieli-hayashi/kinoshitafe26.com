@@ -1,0 +1,251 @@
+// _common.scss
+/*Color Management*/
+/*Basic Color*/
+$ff: #ffffff;
+$fa: #fafafa;
+$f8: #f8f8f8;
+$f7: #f7f7fc;
+$f5: #f5f5f5;
+$f3: #f3f3f3;
+$f0: #f0f0f0;
+$ee: #eeeeee;
+$dd: #dddddd;
+/*Couplate Color*/
+$txt: #07071e;
+$main: #ffffff;
+$sub: #d0d4d6;
+$key: #0003ff;
+$keyD: #0100a7;
+$eye: #f9ba2d;
+$new: #3773d3;
+$career: #f92d2d;
+$border: rgba(0,0,0,.1025);
+$background: #f7f7f5;
+$subground: #fff;
+/*Footer*/
+$f_base: #232323;
+$f_color: #444343;
+$f_border: #353535;
+
+/*ASIDE*/
+$s_base: #151515;
+
+$gray: #555555;
+$blk: #150606;
+/*!color*/
+$blk_25: #252525;
+$blk_15: #151515;
+$blk_00: #000;
+$text-color: #252525;
+$fs-13: 13px;
+$fs-27: 27.5px;
+$fs-32_sp: 3.2vw;
+$background-color: #ddd;
+$asp-color: #ddd;
+$index: ".index";
+$i: 1;
+@mixin transition {
+ transition: cubic-bezier(0.22, 0.61, 0.36, 1) .3s;
+ -o-transition: cubic-bezier(0.22, 0.61, 0.36, 1) .3s;
+ -moz-transition: cubic-bezier(0.22, 0.61, 0.36, 1) .3s;
+ -webkit-transition: cubic-bezier(0.22, 0.61, 0.36, 1) .3s;
+}
+@mixin transition_slow {
+ transition: cubic-bezier(0.22, 0.61, 0.36, 1) 1.25s;
+ -o-transition: cubic-bezier(0.22, 0.61, 0.36, 1) 1.25s;
+ -moz-transition: cubic-bezier(0.22, 0.61, 0.36, 1) 1.25s;
+ -webkit-transition: cubic-bezier(0.22, 0.61, 0.36, 1) 1.25s;
+}
+@mixin transition_superslow {
+ transition: cubic-bezier(0.22, 0.61, 0.36, 1) 6s;
+ -o-transition: cubic-bezier(0.22, 0.61, 0.36, 1) 6s;
+ -moz-transition: cubic-bezier(0.22, 0.61, 0.36, 1) 6s;
+ -webkit-transition: cubic-bezier(0.22, 0.61, 0.36, 1) 6s;
+}
+@mixin transition_delay {
+ transition: cubic-bezier(0.22, 0.61, 0.36, 1) .3s .15s;
+ -o-transition: cubic-bezier(0.22, 0.61, 0.36, 1) .3s .15s;
+ -moz-transition: cubic-bezier(0.22, 0.61, 0.36, 1) .3s .15s;
+ -webkit-transition: cubic-bezier(0.22, 0.61, 0.36, 1) .3s .15s;
+}
+@mixin transition_transform1 {//Heo wongun
+ transition: cubic-bezier(0.43, 0.05, 0.17, 1) .82s .82s;
+ -o-transition: cubic-bezier(0.43, 0.05, 0.17, 1) .82s .82s;
+ -moz-transition: cubic-bezier(0.43, 0.05, 0.17, 1) .82s .82s;
+ -webkit-transition: cubic-bezier(0.43, 0.05, 0.17, 1) .82s .82s;
+}
+@mixin transition_transform2 {//Heo wongun
+ transition: cubic-bezier(0.55, 0.05, 0.22, 0.99) .41s;
+ -o-transition: cubic-bezier(0.55, 0.05, 0.22, 0.99) .41s;
+ -moz-transition: cubic-bezier(0.55, 0.05, 0.22, 0.99) .41s;
+ -webkit-transition: cubic-bezier(0.55, 0.05, 0.22, 0.99) .41s;
+}
+@mixin mov {//Heo wongun
+ transition: cubic-bezier(0.55, 0.05, 0.22, 0.99) .328s;
+ -o-transition: cubic-bezier(0.55, 0.05, 0.22, 0.99) .328s;
+ -moz-transition: cubic-bezier(0.55, 0.05, 0.22, 0.99) .328s;
+ -webkit-transition: cubic-bezier(0.55, 0.05, 0.22, 0.99) .328s;
+}
+@mixin move {//Heo wongun
+ transition: all cubic-bezier(0.55, 0.05, 0.22, 0.99) .615s;
+ -o-transition: all cubic-bezier(0.55, 0.05, 0.22, 0.99) .615s;
+ -moz-transition: all cubic-bezier(0.55, 0.05, 0.22, 0.99) .615s;
+ -webkit-transition: all cubic-bezier(0.55, 0.05, 0.22, 0.99) .615s;
+}
+@mixin pop {//Popin
+ transition: all cubic-bezier(.28,1.52,.73,1.25) .41s;
+ -o-transition: all cubic-bezier(.28,1.52,.73,1.25) .41s;
+ -moz-transition: all cubic-bezier(.28,1.52,.73,1.25) .41s;
+ -webkit-transition: all cubic-bezier(.28,1.52,.73,1.25) .41s;
+}
+
+/*!レスポンシブ*/
+$breakpoints : (
+  "xl":"screen and (min-width:1367px)",
+  "lg":"screen and (max-width:1024px)",
+  "md":"screen and (max-width:768px)",
+  "sm":"screen and (max-width:480px)"
+);
+@mixin mq($breakpoint:md){
+  @media #{map-get($breakpoints, $breakpoint)}{
+    @content;
+  }
+}
+@mixin mq($breakpoint:xl){
+  @media #{map-get($breakpoints, $breakpoint)}{
+    @content;
+  }
+}
+
+/*mouse-follower-dev*/
+$mf-color-base:#555555 !default;
+$mf-color-text:#fff !default;
+
+.mf-cursor {
+	color: #555555;
+	$root:&;
+	position:fixed;
+ top:0;
+ left:0;
+ z-index:10001!important;
+ direction:ltr;
+ contain:layout style size;
+ pointer-events:none;
+ transition:opacity 0.3s, color 0.4s;
+ &:before {
+		content:"";
+		position:absolute;
+		top:-24px;
+		left:-24px;
+		display:block;
+		width:48px;
+		height:48px;
+		transform:scale(0.2);
+		background:currentColor;
+		border-radius:50%;
+		transition:transform 0.25s ease-in-out, opacity 0.1s;
+	}
+	&.-inverse {
+		color:invert($mf-color-base);
+	}
+	&.-exclusion {
+		@supports (mix-blend-mode:exclusion) {
+			mix-blend-mode:exclusion;
+			&:before {
+				background:invert($mf-color-base);
+			}
+		}
+	}
+	&.-pointer {
+		&:before {
+			transform:scale(0.15);
+		}
+	}
+	&.-text {
+		white-space: nowrap;
+		&:before {
+			opacity:0.85;
+			transform:scale(1.7);
+		}
+		&.-active:before {
+			transform:scale(1.6);
+			transition-duration:0.2s;
+		}
+	}
+	&.-icon {
+		&:before {
+			transform:scale(1.5);
+		}
+		&.-active:before {
+			transform:scale(1.4);
+		}
+	}
+	&.-hidden {
+		&:before {
+			transform:scale(0);
+		}
+	}
+	&-text {
+		position:absolute;
+  top:-18px;
+  left:-18px;
+  width:36px;
+  height:36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transform:scale(0) rotate(10deg);
+  opacity:0;
+		color:$mf-color-text;
+  font-size:16px;
+  line-height:20px;
+  text-align:center;
+  transition:opacity 0.4s, transform 0.3s;
+  #{$root}.-text &, #{$root}.-icon & {
+			opacity:1;
+			transform:scale(1);
+  }
+ }
+ &-media {
+  position:absolute;
+  width:200px!important;
+  height:200px!important;
+  margin:(-200px * 0.5) 0 0 (-200px * 0.5)!important;
+		@include mq(md){
+   width:108px!important;
+   height:108px!important;
+   margin:(-108px * 0.5) 0 0 (-108px * 0.5)!important;
+		}
+  img, video {
+   position:absolute;
+   top:50%;
+   left:50%;
+   transform:translate(-50%, -50%);
+   border-radius:50%;
+   @supports (object-fit:cover) {
+    position:static;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform:translateZ(0);
+   }
+  }
+  &-box {
+   position:relative;
+   width:100%;
+   height:100%;
+   overflow:hidden;
+   transform:scale(0) translateZ(0);
+   padding:1px;
+   opacity:0;
+   border-radius:50%;
+   transition:transform 0.35s, opacity 0.2s 0.2s;
+   #{$root}.-media & {
+    opacity:1;
+    transform:scale(0.696);
+    transition-duration:0.4s, 0.4s;
+    transition-delay:0s, 0s;
+			}
+		}
+	}
+}
