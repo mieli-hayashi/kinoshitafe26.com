@@ -223,6 +223,7 @@
       }
 
       .big-txt-sp {
+        display: none;
         position: absolute;
         top: 20px;
         left: 50%;
@@ -238,10 +239,14 @@
         white-space: nowrap;
         z-index: 999;
 
+        @include sp {
+          display: block;
+        }
+
         span {
           display: inline-block;
           color: #cd101a;
-          margin: 40px auto;
+          margin: 10px auto;
 
           &:first-child {
             margin-top: 0;
@@ -323,7 +328,8 @@
   }
 
   .gd-bottom {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
 
     .other-awards {
       display: flex;
