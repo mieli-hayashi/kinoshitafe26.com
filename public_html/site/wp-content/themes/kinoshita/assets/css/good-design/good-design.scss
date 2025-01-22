@@ -1,6 +1,25 @@
 /**
  * 2024グッドデザインページのスタイル定義.
  */
+
+@mixin pc {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin tb {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
 .gd-wrapper {
   .gd-top {
     .gd-logo {
@@ -37,6 +56,10 @@
       white-space: nowrap;
       z-index: 999;
 
+      @include tb {
+        font-size: 12vh;
+      }
+
       span {
         display: inline-block;
         color: #cd101a;
@@ -50,7 +73,12 @@
 
     .gd-contents-inner {
       max-width: 1110px;
+      width: 60%;
       margin: 150px auto 0;
+
+      @include tb {
+        margin-top: 100px;
+      }
 
       .gd-ttl {
         width: 60%;
@@ -102,6 +130,10 @@
         width: 50%;
         margin: 0 auto 30px;
         font-size: 12px;
+
+        @include tb {
+          width: 90%;
+        }
       }
 
       .gd-txt {
@@ -124,6 +156,17 @@
       width: 100vw;
       max-width: unset;
       position: relative;
+
+      .gd-point-bg {
+        overflow: hidden;
+
+        img {
+          @include tb {
+            transform: scale(1.8);
+            transform-origin: bottom;
+          }
+        }
+      }
 
       .gd-point-inner {
         position: absolute;
@@ -175,6 +218,10 @@
 
     .gd-judge {
       margin-bottom: 150px;
+
+      @include tb {
+        margin-bottom: unset;
+      }
     }
   }
 
@@ -190,6 +237,10 @@
         width: 50%;
         margin: 0 auto;
         padding: 50px 80px;
+
+        @include tb {
+          padding: 40px;
+        }
 
         .award-logo {
           display: flex;
@@ -301,9 +352,10 @@
         justify-content: center;
         align-items: center;
         position: relative;
-        color: #fff;
         width: 100%;
         height: 100%;
+        font-size: 14px;
+        color: #fff;
         text-align: center;
 
         &:after {
