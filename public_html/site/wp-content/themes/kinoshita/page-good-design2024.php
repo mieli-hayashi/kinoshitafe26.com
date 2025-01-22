@@ -22,7 +22,7 @@
         <span class="gd-ttl-l">2024&nbsp;グッドデザイン賞</span>
       </h3>
       <ul class="gd-list">
-        <li>鉄骨加工工場/オフィス</li>
+        <li class="only-pc">鉄骨加工工場/オフィス</li>
         <li>Kinoshita&nbsp;Fe26&emsp;木下工業株式会社&emsp;新工場/新事務棟</li>
       </ul>
       <div class="gd-txt">
@@ -35,6 +35,9 @@
       <figure class="gd-point-bg">
         <img src="<?php echo bloginfo('template_url'); ?>/assets/images/good-design/point.png" alt="point">
       </figure>
+      <div class="big-txt-sp">
+        <span>GOOD</span><span>DESIGN</span><span>AWARD</span><span>2024</span>
+      </div>
       <div class="gd-point-inner fadeup">
         <h3 class="gd-ttl">
           <span class="gd-ttl-l">受賞ポイント</span>
