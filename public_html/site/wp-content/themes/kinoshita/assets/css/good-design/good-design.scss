@@ -1,0 +1,503 @@
+/**
+ * 2024グッドデザインページのスタイル定義.
+ */
+
+@mixin pc {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin tb {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+.only-pc {
+  display: none;
+
+  @include pc {
+    display: block;
+  }
+}
+
+.only-sp {
+  display: none;
+
+  @include sp {
+    display: block;
+  }
+}
+
+.gd-wrapper {
+  .gd-top {
+    .gd-logo {
+      width: 490px;
+      margin: 40px auto 0;
+
+      @include sp {
+        width: 90%;
+        margin-top: 0;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .gd-hero {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  .gd-contents {
+    position: relative;
+    width: 100%;
+
+    .big-txt {
+      position: absolute;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+      font-size: 24vh;
+      font-weight: bold;
+      line-height: 1;
+      white-space: nowrap;
+      z-index: 999;
+
+      @include tb {
+        font-size: 12vh;
+      }
+
+      @include sp {
+        display: none;
+      }
+
+      span {
+        display: inline-block;
+        color: #cd101a;
+        margin: 40px auto;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .gd-contents-inner {
+      max-width: 1110px;
+      width: 60%;
+      margin: 150px auto 0;
+
+      @include tb {
+        margin-top: 100px;
+      }
+
+      @include sp {
+        width: 75%;
+      }
+
+      .gd-ttl {
+        width: 60%;
+        max-width: 700px;
+        margin: 0 auto 40px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #cd101a;
+        text-align: center;
+
+        @include sp {
+          width: 100%;
+        }
+
+        .gd-ttl-l {
+          position: relative;
+          display: block;
+          width: fit-content;
+          margin: 0 auto;
+          font-size: 18px;
+          color: #cd101a;
+
+          @include sp {
+            font-size: 14px;
+          }
+
+          &:before,
+          &:after {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            content: "◆";
+            font-size: 24px;
+          }
+
+          &:before {
+            left: -40px;
+          }
+
+          &:after {
+            right: -40px;
+          }
+        }
+
+        .gd-ttl-s {
+          display: block;
+          font-size: 14px;
+          color: #cd101a;
+          margin-top: 20px;
+        }
+      }
+
+      .gd-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 50%;
+        margin: 0 auto 30px;
+        font-size: 12px;
+
+        @include tb {
+          width: 90%;
+        }
+
+        @include sp {
+          font-size: 10px;
+        }
+      }
+
+      .gd-txt {
+        font-size: 13px;
+
+        p {
+          line-height: 2.8;
+          letter-spacing: 0.05em;
+          text-align: justify;
+        }
+      }
+    }
+
+    .gd-intro {
+      margin-top: 0;
+      padding-top: 150px;
+
+      @include sp {
+        padding-top: 50px;
+      }
+    }
+
+    .gd-point {
+      width: 100vw;
+      max-width: unset;
+      position: relative;
+
+      .gd-point-bg {
+        overflow: hidden;
+
+        @include sp {
+          height: 140vh;
+        }
+
+        img {
+          @include tb {
+            transform: scale(1.8);
+            transform-origin: bottom;
+          }
+
+          @include sp {
+            transform: scale(4.8);
+            transform-origin: top;
+          }
+        }
+      }
+
+      .big-txt-sp {
+        display: none;
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transform: rotate(180deg) translateX(50%);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        font-size: 10vw;
+        font-weight: bold;
+        line-height: 1;
+        white-space: nowrap;
+        z-index: 999;
+
+        @include sp {
+          display: block;
+        }
+
+        span {
+          display: inline-block;
+          color: #cd101a;
+          margin: 10px auto;
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+
+      .gd-point-inner {
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+
+        @include sp {
+          width: 75%;
+        }
+
+        .gd-txt {
+          li {
+            font-weight: bold;
+            margin-bottom: 20px;
+
+            @include sp {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+
+    .gd-slider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      max-width: unset;
+      margin: 150px auto 0;
+      overflow: hidden;
+
+      @include sp {
+        margin-top: 100px;
+      }
+
+      .slider-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .slider-track {
+        display: flex;
+        gap: 20px;
+        will-change: transform;
+      }
+
+      .slide {
+        width: 30vw;
+        flex-shrink: 0;
+
+        @include sp {
+          width: 50vw;
+        }
+
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    .gd-judge {
+      margin-bottom: 150px;
+
+      @include tb {
+        margin-bottom: unset;
+      }
+    }
+  }
+
+  .gd-bottom {
+    width: 90%;
+    margin: 0 auto;
+
+    .other-awards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      @include sp {
+        display: block;
+      }
+
+      .other-awards-item {
+        width: 50%;
+        margin: 0 auto;
+        padding: 50px 80px;
+
+        @include sp {
+          width: 100%;
+        }
+
+        @include tb {
+          padding: 40px;
+        }
+
+        @include sp {
+          padding-top: 0;
+        }
+
+        .award-logo {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 80%;
+          height: 300px;
+          margin: 0 auto 40px;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .prize {
+          display: inline-block;
+          width: 100%;
+          text-align: center;
+          font-weight: bold;
+        }
+
+        hr {
+          margin: 60px auto;
+        }
+
+        .award-more {
+          width: 100%;
+
+          .more-btn {
+            position: relative;
+            display: block;
+            width: 80%;
+            margin: 40px auto;
+            padding: 20px 20px;
+            text-align: center;
+            border: none;
+            background: #e6e6e6;
+            transition: 0.3s;
+
+            &:after {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              right: 20px;
+              display: block;
+              content: "→";
+            }
+
+            &:hover {
+              background: #c9caca;
+            }
+          }
+
+          .award-detail {
+            display: block;
+            overflow: hidden;
+            opacity: 0;
+            width: 80%;
+            max-height: 0;
+            margin: 40px auto;
+            padding: 40px 20px;
+            background: #e6e6e6;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+
+            &.is-active {
+              max-height: fit-content;
+              opacity: 1;
+            }
+
+            li {
+              margin-top: 40px;
+              font-size: 12px;
+              font-weight: bold;
+
+              p {
+                line-height: 3.5;
+                font-weight: bold;
+                text-align: justify;
+
+                &:first-child {
+                  margin-top: 20px;
+                }
+              }
+            }
+
+            .award-name {
+              margin: 60px auto;
+            }
+
+            .award-detail-img {
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .to-tour {
+      width: 450px;
+      height: 90px;
+      margin: 60px auto 120px;
+      background: #0003ff;
+      cursor: pointer;
+
+      @include sp {
+        width: 80%;
+      }
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        font-size: 14px;
+        color: #fff;
+        text-align: center;
+
+        &:after {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 20px;
+          display: block;
+          content: "→";
+        }
+      }
+    }
+  }
+
+  // fadeUp.
+  .fadeup {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+    &.fade-on {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
