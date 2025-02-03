@@ -55,7 +55,7 @@
 
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/good-design/good-design.css">
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/good-design/good-design.css?250203">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="icon" type="image/x-icon" href="<?php bloginfo('template_url'); ?>/images/favicon.png">
 	<link rel="icon" type="image/x-icon" href="<?php bloginfo('template_url'); ?>/images/favicon.svg">
@@ -184,6 +184,7 @@
 				<ul class="social">
 					<li><a href="https://www.instagram.com/kinoshita_fe26_recruit/" target="_blank"><i><img src="<?php bloginfo('template_url'); ?>/images/icon/instagram.svg" class="objf"></i></a></li>
 					<!-- <li><a href="https://www.youtube.com/channel/UCk2QoPVz-ZAjLUuti3rOO1A" target="_blank"><i><img src="<?php bloginfo('template_url'); ?>/images/icon/youtube.svg" class="objf"></i></a></li> -->
+					<li><a href="https://nimu-fe26.net/" target="_blank"><i style="width: 35px; height: 35px;"><img src="<?php bloginfo('template_url'); ?>/images/icon/nimusroom.png" class="objf" style="object-fit: contain;"></i></a></li>
 				</ul>
 			</div>
 		</div>
